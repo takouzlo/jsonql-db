@@ -26,7 +26,7 @@ For the GUI browser (Flet-based):
 
 Quick Start
 
-    import jsonql-db
+    import jsonql
 
     db = jsonql.connect("my_data")  # creates my_data/ folder
 
