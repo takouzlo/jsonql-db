@@ -1,86 +1,104 @@
-# JSONQL — Lightweight JSON Database
+# JSONQL-DB — Your Lightweight JSON Database
 
-> **SQLite, but with JSON files.**  
-> A simple, transparent, file-based database for local apps, prototypes, and edge devices.
+> **SQLite, but with human-readable JSON files.**  
+> Zero setup. Zero server. Just pure Python and transparency.
 
-[![PyPI](https://img.shields.io/pypi/v/jsonql.svg)](https://pypi.org/project/jsonql/)
+[![PyPI](https://img.shields.io/pypi/v/jsonql-db.svg)](https://pypi.org/project/jsonql-db/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/pypi/pyversions/jsonql-db)](https://pypi.org/project/jsonql-db/)
 
-✅ **No server** • ✅ **No setup** • ✅ **Just JSON files**  
-✅ **SQL-like queries** • ✅ **Thread-safe** • ✅ **< 300 lines core**
+## ✨ Why JSONQL-DB?
 
-> ⚠️ **Not related to** [`json-ql`](https://pypi.org/project/json-ql/) (PyPI) or [`jsonql.js.org`](https://jsonql.js.org) — those are **JSON query tools**, not databases.
+| Feature          | SQLite        | JSONQL-DB               |
+|------------------|---------------|-------------------------|
+| **Storage**      | Binary        | **Human-readable JSON** |
+| **Setup**        | Install       | **Zero install** (pure Python) |
+| **Transparency** | Opaque        | **Everything is a file** |
+| **Ideal for**    | Heavy apps    | **Prototypes, AV tools, edge devices, indie devs** |
 
+✅ No server • ✅ Thread-safe • ✅ SQL-like queries • ✅ < 300 lines core
+
+> ⚠️ **Not related to** [`json-ql`](https://pypi.org/project/json-ql/) or [`jsonql.js.org`](https://jsonql.js.org) — those are **JSON query utilities**, not databases.
 
 ---
 
-## Install
+## 🚀 Install
 
-``` bash
-    pip install jsonql
+```bash
+pip install jsonql-db
 
 
 For the GUI browser (Flet-based):
-``` bash
-    pip install "jsonql[browser]"
+    pip install "jsonql-db[browser]"
 
 Quick Start
 
     import jsonql
 
-    db = jsonql.connect("my_data")  # creates my_data/ folder
+    # Connect (creates folder if needed)
+    db = jsonql.connect("my_app_data")
 
     # Insert
-    db.insert("devices", {"name": "Projector", "room": "A101"})
+    db.insert("devices", {"name": "Projector", "room": "A101", "ip": "192.168.1.10"})
 
     # Query
-    print(db.select("devices", {"room": "A101"}))
+    devices = db.select("devices", {"room": "A101"})
+    print(devices)
 
     # SQL-like
-    print(db.query("SELECT * FROM devices WHERE room = 'A101'"))
-
-GUI Browser
-``` bash
-    python -m jsonql.browser
-
-![alt text](jqlFlet.png)
-
-Why JSONQL?
-
-Feature	            SQLite	                JSONQL
-Storage             format Binary	        Human-readable JSON
-Setup	            Install required	    Zero install (pure Python)
-Transparency	    Opaque	                Everything is a file
-Ideal for	        Heavy apps	            Lightweight tools, AV, IoT, prototypes
+    result = db.query("SELECT * FROM devices WHERE room = 'A101'")
+    print(result)
 
 
-License
+🖥️ GUI Browser
+Launch the built-in browser:
+
+python -m jsonql.browser
+
+![JSONQL Browser](https://raw.githubusercontent.com/tonpseudo/jsonql-db/main/jqlFlet.png)
+
+
+🧠 Philosophy
+“If it’s not human-readable, it’s not transparent.”
+JSONQL-DB is for developers who value simplicity, portability, and control. 
+
+Perfect for:
+
+Audiovisual integrators (Crestron, QSC, Extron)
+IoT edge logging
+Local Flet/PyQt apps
+Teaching database basics
+
+
+📜 License
 MIT — see LICENSE
 
+# demo.py
+import jsonql
 
-```python
-    # demo.py
-    import jsonql
+def main():
+    db = jsonql.connect("demo_db")
+    
+    # Insert
+    dev_id = db.insert("devices", {
+        "name": "Epson L710U",
+        "type": "projector",
+        "room": "A101",
+        "ip": "192.168.10.50"
+    })
+    print(f"✅ Inserted device ID: {dev_id}")
 
-    def main():
-        db = jsonql.connect("demo_db")
-        
-        # Insert
-        dev_id = db.insert("devices", {
-            "name": "Epson L710U",
-            "type": "projector",
-            "room": "A101",
-            "ip": "192.168.10.50"
-        })
-        print(f"✅ Inserted device ID: {dev_id}")
+    # Select
+    devices = db.select("devices", {"room": "A101"})
+    print("🔍 Devices in A101:", devices)
 
-        # Select
-        devices = db.select("devices", {"room": "A101"})
-        print("🔍 Devices in A101:", devices)
+    # SQL Query
+    result = db.query("SELECT * FROM devices WHERE type = 'projector'")
+    print("💻 SQL Result:", result)
 
-        # SQL Query
-        result = db.query("SELECT * FROM devices WHERE type = 'projector'")
-        print("💻 SQL Result:", result)
+if __name__ == "__main__":
+    main()
 
-    if __name__ == "__main__":
-        main()
+
+
+
