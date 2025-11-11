@@ -24,12 +24,13 @@
 
 ## 🚀 Install
 
-```bash
+
 pip install jsonql-db
 
 
 For the GUI browser (Flet-based):
-    pip install "jsonql-db[browser]"
+
+pip install "jsonql-db[browser]"
 
 Quick Start
 
@@ -64,10 +65,10 @@ JSONQL-DB is for developers who value simplicity, portability, and control.
 
 Perfect for:
 
-Audiovisual integrators (Crestron, QSC, Extron)
-IoT edge logging
-Local Flet/PyQt apps
-Teaching database basics
+- Audiovisual integrators (Crestron, QSC, Extron)
+- IoT edge logging
+- Local Flet/PyQt apps
+- Teaching database basics
 
 
 📜 License
