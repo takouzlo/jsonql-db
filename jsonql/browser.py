@@ -12,7 +12,7 @@ class BrowserApp:
         self.auto_connect()
 
     def setup_ui(self):
-        self.page.title = "JSONQL Browser"
+        self.page.title = "JSONQL-DB Browser"
         self.page.padding = 10
         self.page.scroll = None  # Désactive le scroll global
 
