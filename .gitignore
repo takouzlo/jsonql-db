@@ -8,3 +8,22 @@ build/
 dist/
 *.egg-info/
 my_db/
+
+# Fichiers PyInstaller / build
+dist/
+build/
+*.spec
+
+# Icônes temporaires ou binaires
+app-icon.ico
+generated-*.ico
+
+# Dossiers de données de test
+my_db/
+demo_db/
+
+# Environnements Python
+__pycache__/
+*.pyc
+.venv/
+venv/
