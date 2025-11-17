@@ -12,6 +12,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/jsonql-db)](https://pypi.org/project/jsonql-db/)
 
 
+
 ## ✨ Why JSONQL-DB?
 
 | Feature          | SQLite        | JSONQL-DB               |
@@ -25,6 +26,8 @@
 
 > ⚠️ **Not related to** [`json-ql`](https://pypi.org/project/json-ql/) or [`jsonql.js.org`](https://jsonql.js.org) — those are **JSON query utilities**, not databases.
 
+
+💼 **Go Pro**: [Get JSONQL Pro on Gumroad](https://falikster.gumroad.com/l/jsonqlPRO)
 ---
 
 ## 🚀 Install
