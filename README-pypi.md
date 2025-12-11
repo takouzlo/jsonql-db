@@ -25,8 +25,8 @@ Note: Not related to [json-ql](https://pypi.org/project/json-ql/) or [jsonql.js.
 
 ## Install
 
-```bash
-    pip install jsonql-db
+
+pip install jsonql-db
 
 For the GUI browser (Flet-based):
 
@@ -56,16 +56,17 @@ GUI Browser
 
     python -m jsonql.browser
 
-    ![JSONQL Browser](https://raw.githubusercontent.com/takouzlo/jsonql-db/main/jqlFlet.png)
+![JSONQL Browser](https://raw.githubusercontent.com/takouzlo/jsonql-db/main/jqlFlet.png)
 
 
 Philosophy
 
     "If it’s not human-readable, it’s not transparent."
 
-    JSONQL-DB is for developers who value simplicity, portability, and control. 
+JSONQL-DB is for developers who value simplicity, portability, and control. 
 
-    Perfect for:
+
+Perfect for:
 
     - Audiovisual integrators (Crestron, QSC, Extron)
     - IoT edge logging
